@@ -1,11 +1,12 @@
 // @ts-nocheck
 import { MenuTable } from "../components/MenuTable";
 import "../styles/menu.scss";
-import icons from "../data/icons.json";
+import images from "../data/images.json";
 
 export const PageMenu = () => {
-  const iconTwitter = icons.find((iconItem) => iconItem.name === "twitter");
-  console.log(iconTwitter);
+  const imageFoodRoll = images.find(
+    (imageItem) => imageItem.name === "food rolls"
+  );
   return /*html*/ `
 <main>
   <h1>Menu</h1>
@@ -13,12 +14,7 @@ export const PageMenu = () => {
   <div class="flexbox">
     ${MenuTable()}
 
-    <svg xmlns="http://www.w3.org/2000/svg" width="100px" height="100px" fill="red" viewBox="${
-      iconTwitter.viewBox
-    }">
-      <path d="${iconTwitter.path}" /></svg>
-    
-
+    <img src="${imageFoodRoll?.url}" alt="${imageFoodRoll?.alt}">
 
 
     <img class="tall__image" src="https://assets.website-files.com/6196d22f14605588db7936dc/6196d918bdb49658c3e485b7_portrait-03.jpg"
