@@ -1,0 +1,17 @@
+@use "variables" as var;
+
+@mixin image-border {
+  border: var.$border var.$accent_color;
+  border-radius: 3rem;
+  box-shadow: 0 4px 0 0 var.$accent_color;
+}
+@mixin image-border-light {
+  border: var.$border var.$light_accent;
+  border-radius: 1.4rem;
+  box-shadow: 0 4px 0 0 var.$light_accent;
+}
+@mixin header-font-style {
+  line-height: 1.1em;
+  font-size: 7.2rem;
+  font-family: var.$header_font;
+}

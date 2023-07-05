@@ -1,0 +1,54 @@
+@use "formating";
+@use "variables" as var;
+@use "mixins" as *;
+
+h1 {
+  @include header-font-style;
+  padding: 0 0 5rem;
+}
+
+h2 {
+  @include header-font-style;
+}
+
+main {
+  padding: 3rem 15vh 0;
+  font-family: var.$main_font;
+}
+table {
+  font-size: 1.8rem;
+  min-width: fit-content;
+  td {
+    border-bottom: 0.2rem dashed var.$accent_color;
+    padding: 2rem 0;
+    &:nth-child(2) {
+      padding-left: 7rem;
+    }
+  }
+}
+
+.small__image {
+  @include image-border;
+  margin-top: 5rem;
+  width: 40.8rem;
+}
+
+.tall__image {
+  @include image-border;
+  width: 63.6rem;
+  aspect-ratio: 1 / 1;
+}
+
+.flexbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15rem;
+}
+
+.price {
+  margin: 0 2rem;
+  &::before {
+    content: "$";
+  }
+}

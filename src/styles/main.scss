@@ -1,0 +1,121 @@
+@use "formating";
+@use "variables" as var;
+@use "mixins" as mx;
+
+// font awesome
+@import "@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "@fortawesome/fontawesome-free/scss/solid.scss";
+@import "@fortawesome/fontawesome-free/scss/brands.scss";
+@import "@fortawesome/fontawesome-free/scss/regular.scss";
+
+body {
+  background-color: var.$main_color;
+  font-family: var.$main_font;
+  color: var.$accent_color;
+  font-size: 1.8rem;
+  line-height: 28px;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  img {
+    position: absolute;
+    top: 5rem;
+    left: 5rem;
+  }
+}
+
+nav {
+  margin-bottom: 2rem;
+  padding: 0.5rem;
+
+  ul {
+    display: flex;
+    list-style-type: none;
+    margin-top: 5rem;
+    gap: 1rem;
+    li {
+      &:nth-child(odd) {
+        transform: rotate(-1deg);
+      }
+      &:nth-child(even) {
+        transform: rotate(1deg);
+      }
+      a {
+        width: 10vw;
+        text-decoration: none;
+        padding: 3rem 8rem;
+        border: var.$border var.$accent_color;
+        border-radius: 1.4rem;
+        background-color: var.$main_color;
+        box-shadow: var.$box_shadow transparent;
+        color: var.$accent_color;
+        font-weight: 600;
+        text-align: center;
+
+        &:hover {
+          background-color: var.$light_accent;
+          box-shadow: var.$box_shadow var.$accent_color;
+        }
+
+        &.active {
+          background-color: var.$light_accent;
+          box-shadow: var.$box_shadow var.$accent_color;
+        }
+      }
+    }
+  }
+}
+// footer
+footer {
+  background-color: var.$accent_color;
+  width: 100vw;
+  height: 100vh;
+  .button_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  a {
+    color: var.$light_accent;
+    img {
+      background-color: var.$button_color;
+      border-radius: 50%;
+      padding: 1.5rem;
+      box-shadow: var.$box_shadow var.$light_accent;
+    }
+  }
+  p {
+    color: var.$light_accent;
+    text-align: center;
+  }
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    padding-top: 5rem;
+    gap: 4rem;
+    img {
+      width: 20rem;
+      aspect-ratio: 1/1;
+      @include mx.image-border-light;
+    }
+  }
+}
+
+.container_column {
+  padding: 5rem;
+  max-width: fit-content;
+  margin: 0 auto;
+  a {
+    text-decoration: none;
+    &:visited {
+      color: var.$light_accent;
+    }
+  }
+}
+
+main {
+  font-size: 1.2rem;
+}
